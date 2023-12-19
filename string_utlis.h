@@ -60,3 +60,44 @@ while(*s!='\0'){
 
 
 }
+
+
+
+// QUESTION 3
+
+void removeChar(char *s, char c){
+
+char *cc=s;
+
+char *cc2;
+
+while(*s!='\0'){
+
+if(*s==c){
+
+*s=*(s+1);
+cc2=s+1;
+
+while( *cc2 != '\0'){
+
+*cc2 = *(cc2+1);
+cc2++;
+
+}
+
+}
+
+s++;
+}
+
+printf("\nAfter removing %c we get : ",c);
+
+while(*cc!='\0'){
+
+printf("%c",*cc);
+cc++;
+
+}
+
+
+}
