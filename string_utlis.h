@@ -4,7 +4,7 @@
 
 
 void replaceChar(char *s, char oldChar, char newChar);
-char *replaceCharCopy(char *s, char oldChar, char newChar,char *ns);
+char *replaceCharCopy(char *s, char oldChar, char newChar,char *newst);
 void removeChar(char *s, char c);
 char * removeCharCopy( char *s, char c);
 
@@ -40,3 +40,23 @@ while ( testch != (s+1) ){
 }
 
 // question 2
+
+char *replaceCharCopy(char *s, char oldChar, char newChar,char *newst){
+
+while(*s!='\0'){
+
+        if(*s==oldChar){
+
+            *s=newChar;
+            }
+
+        *ns=*s;
+
+        s++;
+        newst++;
+
+    }
+
+
+
+}
