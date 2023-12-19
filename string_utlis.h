@@ -101,3 +101,41 @@ cc++;
 
 
 }
+
+
+
+// QUESTION NO : 4
+
+char * removeCharCopy( char *s, char c){
+
+
+char *p1=s;
+
+char *p2;
+
+while(*s!='\0'){
+
+if(*s==c){
+
+*s=*(s+1);
+p2=s+1;
+
+while( *p2 != '\0'){
+
+*p2 = *(p2+1);
+p2++;
+
+}
+
+}
+
+s++;
+}
+
+char *string = (char * ) malloc(strlen(ptr) + 1);
+
+strcpy(string,p1);
+
+return string;
+
+}
