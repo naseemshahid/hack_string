@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<string_utlis.h>
+
 
 
 void replaceChar(char *s, char oldChar, char newChar);
