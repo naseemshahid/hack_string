@@ -1,7 +1,7 @@
 #include<stdio.h>
+#include "string_utlis.h"
 #include<stdlib.h>
-#include"string_utlis.h"
-
+#include<string.h>
 
 int main(){
 
@@ -9,126 +9,180 @@ int choice;
 printf("\nEnter Question No you want to execute (1-5) : ");
 scanf("%d",&choice);
 
-//QUESTION 1
+// QUESTION NO : 1
 
 if (choice==1){
-    
-int string;
-printf("\nHow many characters you want in your string : ");
-scanf("%d",&string);
+   
+// Test Case 1
 
-getchar();
+printf("\nTest Case 1\n");
 
-int size = string+1;
+char str[8]="MURT_Z_";
 
-char str[size];
-char oldChar;
-char newChar;
-
-printf("\nEnter Your String : ");
-scanf("%s",&str);
-
-getchar();
-
-printf("\nEnter Character you want to remove : ");
-scanf("%c",&oldChar);
-
-getchar();
-
-printf("\nEnter Character you want to Place : ");
-scanf("%c",&newChar);
+char oldChar='_';
+char newChar='A';
 
 replaceChar(str , oldChar, newChar);
 
+// Test Case 2
+
+printf("\nTest Case 2\n");
+
+char str_2[8]="AOMSaTS";
+
+oldChar='A';
+newChar='C';
+
+replaceChar(str_2 , oldChar, newChar);
+
+// Test Case 3
+
+printf("\nTest Case 3\n");
+
+char str_3[12]="M__YE M__YE";
+
+oldChar='_';
+newChar='O';
+
+replaceChar(str_3 , oldChar, newChar);
+
 }
 
-//QUESTION 2
+// QUESTION NO : 2
 
 if (choice==2){
     
-int s;
-printf("\nHow many characters you want in your string : ");
-scanf("%d",&s);
+    //TEST CASE:1
 
-getchar();
+char str[8]="MOOP";
+char oldChar='P';
+char newChar='N';
 
-int size = s+1;
+char *dyn_arr_ptr = replaceCharCopy(str , oldChar, newChar);
 
-char str[size];
-char oldChar;
-char newChar;
+printf("\nAfter Replace of %c with %c we get : %s",oldChar,newChar,dyn_arr_ptr);
 
-printf("\nEnter Your String : ");
-scanf("%s",&str);
+ //TEST CASE:2
 
-getchar();
+char str_2[8]="AOMSaTS";
+ oldChar='A';
+ newChar='C';
 
-printf("\nEnter Character you want to remove : ");
-scanf("%c",&oldChar);
+char *dyn_arr_ptr_2 = replaceCharCopy(str_2 , oldChar, newChar);
 
-getchar();
+printf("\nAfter Replace of %c with %c we get : %s",oldChar,newChar,dyn_arr_ptr_2);
 
-printf("\nEnter Character you want to Place : ");
-scanf("%c",&newChar);
+ //TEST CASE:3
 
-char new_str[size];
+char str_3[12]="M__YE M__YE";
+ oldChar='_';
+ newChar='O';
 
-replaceCharCopy(str , oldChar, newChar,new_str);
+char *dyn_arr_ptr_3 = replaceCharCopy(str_3 , oldChar, newChar);
 
-new_str[size-1]='\0';
-
-printf("\nAfter Replacement we get : %s",new_str);
+printf("\nAfter Replace of %c with %c in we get : %s",oldChar,newChar,dyn_arr_ptr_3);
 
 }
 
-// QUESTION 3
+// QUESTION NO : 3
 
 if(choice==3){
 
-int string;
-printf("\nHow many characters you want in your string : ");
-scanf("%d",&string);
+//test case : 1
 
-int size = s+1;
+char str[9]="MURT_AZA";
 
-char str[size];
-
-printf("\nEnter String : ");
-scanf("%s",&str);
-getchar();
-
-char c;
-printf("\nEnter Character you want to remove from \"%s\" : ",str);
-scanf("%c",&c);
+char c='_';
 
 removeChar(str,c);
+
+//test case : 2
+
+char str_2[9]="COMSIATS";
+
+ c='I';
+
+removeChar(str_2,c);
+
+//test case : 3
+
+char str_3[7]="ABC_DE";
+
+ c='_';
+
+removeChar(str_3,c);
 
 
 }
 
-// QUESTION 4
+// QUESTION NO : 4
 
 if(choice==4){
 
-int s;
-printf("\nHow many characters you want in your string : ");
-scanf("%d",&s);
 
-int size = s+1;
 
-char str[size];
+//TEST CASE :1
 
-printf("\nEnter String : ");
-scanf("%s",&str);
-getchar();
-
-char c;
-printf("\nEnter Character you want to remove from \"%s\" : ",str);
-scanf("%c",&c);
+char str[9]="MURT_AZA";
+char c='_';
 
 char *ptr = removeCharCopy(str,c);
 
-printf("\nAfter Removing %c we get : %s",c,ptr);
+printf("\nAfter Removing %c from %s we get : %s",c,str,ptr);
+
+//TEST CASE :2
+
+char str_2[9]="COMSIATS";
+ c='I';
+
+char *ptr_2 = removeCharCopy(str_2,c);
+
+printf("\nAfter Removing %c from %s we get : %s",c,str_2,ptr_2);
+
+//TEST CASE :3
+
+char str_3[7]="ABC_DE";
+
+ c='_';
+
+char *ptr_3 = removeCharCopy(str_3,c);
+
+printf("\nAfter Removing %c from %s we get : %s",c,str_3,ptr_3);
+
+}
+
+// QUESTION NO : 5
+
+if(choice==5){
+
+//test case : 1
+
+char s [9] = "ABCDEFGH";
+
+int n = 3;
+
+char **ch_ptr = lengthSplit(s,n);
+
+
+int j;
+
+for( int i=0;i<n;i++){
+
+    if(i==(n-1) && j==(n-1)){
+    break;
+ }
+
+    printf("\"");
+    for( j=0;j<n;j++){
+
+printf("%c",ch_ptr[i][j]);
+
+}
+ printf("\" ");
+
+
+}
+
 
 }
 

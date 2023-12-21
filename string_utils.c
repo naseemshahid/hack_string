@@ -1,10 +1,9 @@
-// HACK STRINGS EXERCISES QUESTIONS
 
 #include<stdio.h>
-
+#include"string_utlis.h"
 #include<stdlib.h>
 #include<string.h>
-#include "string_utils.h"
+
 
 // QUESTION NO : 1
 
