@@ -7,7 +7,7 @@ void replaceChar(char *s, char oldChar, char newChar);
 char *replaceCharCopy(char *s, char oldChar, char newChar,char *newst);
 void removeChar(char *s, char c);
 char * removeCharCopy( char *s, char c);
-
+char **lengthSplit(const char *s, int n);
 
 //question no 1
 
@@ -50,7 +50,7 @@ while(*s!='\0'){
             *s=newChar;
             }
 
-        *ns=*s;
+        *newst=*s;
 
         s++;
         newst++;
@@ -132,10 +132,52 @@ p2++;
 s++;
 }
 
-char *string = (char * ) malloc(strlen(ptr) + 1);
+char *string = (char * ) malloc(strlen(p2) + 1);
 
 strcpy(string,p1);
 
 return string;
+
+}
+
+// question 5
+char **lengthSplit(const char *s, int n){
+
+    int size = (strlen(s)+1)/n;
+
+    if((strlen(s)+1) % n != 0){
+
+size++;
+
+    }
+
+    
+
+char *ptrs_ch = (char) malloc(sizeof(char) * size);
+
+for(int i=0;i<size;i++){
+
+ptrs_ch[i] = (char*) malloc(n);
+
+for(int j=0;j<n;j++){
+
+ptrs_ch[i][j] = *s;
+s++;
+
+
+
+}
+if(*s=='\0'){
+
+break;
+
+
+}
+
+}
+
+ptrs_ch[n-1][n-1]='\0';
+
+return ptrs_ch;
 
 }

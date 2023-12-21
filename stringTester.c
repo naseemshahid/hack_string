@@ -19,7 +19,7 @@ scanf("%d",&string);
 
 getchar();
 
-int size = s+1;
+int size = string+1;
 
 char str[size];
 char oldChar;
